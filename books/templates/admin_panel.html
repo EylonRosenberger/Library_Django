@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.name }} by {{ book.author }} ({{ book.year_published }})</li>
+        {% endfor %}
+    </ul>
+    <!-- Add more admin-related actions and forms here -->
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>All Loans</h2>
+  
+  
+  <ul>
+    {% for loan in loans %}
+      <li>
+        Loan date: {{loan.loan_date}} - Book name: {{ loan.book.name }} - Return Date: {{ loan.return_date }} - User: {{loan.customer.username}}
+      </li>
+      
+    {% endfor %}
+  </ul>
+{% endblock %}
+

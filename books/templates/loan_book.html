@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Loan a Book</h2>
+  <form action="{% url 'loan_book' %}" method="post">
+    {% csrf_token %}
+    <select name="selectedBook">
+        <option selected value=0>Select a book</option>
+        {% for item in books %}
+        <option value="{{item.id}}">{{item.name}}</option>
+        {% endfor %}
+    </select>
+    <br/>
+    <br/>
+    <button type="submit">Loan Book</button>
+  </form>
+  {{message}}
+{% endblock %}

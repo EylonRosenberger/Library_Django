@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Your Loans</h1>
+    <ul>
+        {% for loan in loans %}
+            <li>
+                Loan date: {{loan.loan_date}} - Book name: {{ loan.book.name }} - Return Date: {{ loan.return_date }} - User: {{loan.customer.username}}
+                <a href="{% url 'return_book' loan.id %}">
+                    <button>Return</button>
+                </a>
+                
+            </li>
+            
+        {% endfor %}
+    </ul>
+    {% endblock %}
